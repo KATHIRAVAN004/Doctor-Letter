@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doctor Letters</title>
+<style>
+ body{font-family:system-ui,sans-serif;max-width:760px;margin:0 auto;padding:16px;color:#222}
+ nav{display:flex;gap:16px;margin-bottom:16px;border-bottom:1px solid #ddd;padding-bottom:8px}
+ input,textarea,select,button{font:inherit;padding:8px;width:100%;box-sizing:border-box;margin:4px 0 12px}
+ button,.btn{background:#0b6bcb;color:#fff;border:0;border-radius:6px;cursor:pointer;width:auto;padding:8px 16px;text-decoration:none;display:inline-block}
+ .flash{background:#fff3cd;padding:8px;border-radius:6px;margin-bottom:12px}
+ .card{border:1px solid #ddd;border-radius:8px;padding:12px;margin-bottom:10px}
+ a{color:#0b6bcb}
+</style></head><body>
+{% if session.mobile %}<nav><a href="{{ url_for('letters') }}">My letters</a><a href="{{ url_for('choose_type') }}">New letter</a><a href="{{ url_for('logout') }}">Logout</a></nav>{% endif %}
+{% for m in get_flashed_messages() %}<div class="flash">{{ m }}</div>{% endfor %}
+{% block content %}{% endblock %}
+</body></html>

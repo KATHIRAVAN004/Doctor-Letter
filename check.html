@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Referral Letter</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 25px;
+    background: #e9edf2;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #263445;
+}
+
+.certificate {
+    max-width: 850px;
+    min-height: 1100px;
+    margin: auto;
+    background: white;
+    padding: 38px 48px;
+    position: relative;
+    border: 1px solid #d9e0e8;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+}
+
+/* Hospital Header */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 4px solid #087f8c;
+    padding-bottom: 22px;
+}
+
+.logo {
+    width: 75px;
+    height: 75px;
+    border-radius: 15px;
+    background: #087f8c;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.hospital-info h1 {
+    margin: 0;
+    color: #07546b;
+    font-size: 27px;
+    letter-spacing: 1px;
+}
+
+.hospital-info p {
+    margin: 7px 0 0;
+    color: #607080;
+    font-size: 13px;
+}
+
+.doctor-info {
+    text-align: right;
+    margin-left: auto;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* Document */
+.document-title {
+    text-align: center;
+    margin: 38px 0 30px;
+}
+
+.document-title h2 {
+    color: #07546b;
+    font-size: 23px;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.document-title span {
+    display: block;
+    width: 90px;
+    height: 3px;
+    background: #08a0a5;
+    margin: 12px auto;
+}
+
+/* Content */
+.content {
+    font-size: 15px;
+    line-height: 2;
+    min-height: 500px;
+}
+
+.content h1,
+.content h2,
+.content h3 {
+    color: #07546b;
+}
+
+.content p {
+    margin-bottom: 15px;
+}
+
+.content strong {
+    color: #172e42;
+}
+
+/* Signature */
+.signature-area {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 60px;
+}
+
+.signature {
+    width: 220px;
+    text-align: center;
+    border-top: 1px solid #34495e;
+    padding-top: 10px;
+    line-height: 1.6;
+    font-size: 13px;
+}
+
+/* Footer */
+.footer {
+    position: absolute;
+    bottom: 25px;
+    left: 48px;
+    right: 48px;
+    border-top: 2px solid #087f8c;
+    padding-top: 12px;
+    text-align: center;
+    color: #607080;
+    font-size: 11px;
+}
+
+.print-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 30px;
+    background: #087f8c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+@media print {
+    body {
+        padding: 0;
+        background: white;
+    }
+
+    .certificate {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0;
+        padding: 15mm;
+        border: none;
+        box-shadow: none;
+    }
+
+    .print-btn {
+        display: none;
+    }
+
+    @page {
+        size: A4;
+        margin: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="certificate">
+
+    <div class="header">
+
+        <div class="logo">+</div>
+
+        <div class="hospital-info">
+            <h1>Poiuyt</h1>
+            <p>West Indies</p>
+            <p>Professional Medical Services</p>
+        </div>
+
+        <div class="doctor-info">
+            <strong>Dr. Daren Samey</strong><br>
+            MBBS<br>
+            Reg. No: 098765
+        </div>
+
+    </div>
+
+    <div class="document-title">
+        <h2>REFERRAL LETTER</h2>
+        <span></span>
+    </div>
+
+    <div class="content">
+        <p>Date: 07 Nov 2026</p><p>To,</p><p>Dr. Kathiravan</p><p>Ortho</p><p><strong>Re: Referral of Jacki (Male)</strong></p><p>Dear Colleague,</p><p>I am referring the above patient for your expert opinion and management.</p><p>Kindly evaluate and advise. Thank you for your help.</p><p>Sincerely,</p><p>Dr. Daren Samey</p>
+    </div>
+
+    <div class="signature-area">
+        <div class="signature">
+            <strong>Dr. Daren Samey</strong><br>
+            MBBS<br>
+            Registration No: 098765<br>
+            Doctor's Signature / Seal
+        </div>
+    </div>
+
+    <div class="footer">
+        Poiuyt
+        
+        | West Indies
+        
+        <br>
+        This document is issued by the attending doctor.
+    </div>
+
+</div>
+
+<button class="print-btn" onclick="window.print()">
+    Print Referral Letter
+</button>
+</body>
+</html>
+</body>
+</html>

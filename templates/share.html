@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block content %}
+<h2>Share letter</h2>
+<p>Temporary link (valid 7 days; only opens on devices that can reach this computer):</p>
+<textarea rows="5" readonly onclick="this.select()">{{ url }}</textarea>
+<a href="{{ url_for('view_letter', letter_id=letter_id) }}">Back</a>
+{% endblock %}

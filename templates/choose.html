@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block content %}
+<h2>Choose letter type</h2>
+{% for key, t in types.items() %}
+<div class="card"><a href="{{ url_for('fill_form', letter_type=key) }}">{{ t.label }}</a></div>
+{% endfor %}{% endblock %}

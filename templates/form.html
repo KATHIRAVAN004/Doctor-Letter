@@ -1,0 +1,20 @@
+{% extends "base.html" %}{% block content %}
+<h2>{{ cfg.label }}</h2>
+<form method="post">
+{% for name, label, kind in cfg.fields %}
+ <label>{{ label }}</label>
+ {% if kind.startswith('select:') %}
+  <select name="{{ name }}" required>
+   <option value="">-- Select --</option>
+   {% for opt in kind[7:].split(',') %}
+    <option value="{{ opt }}">{{ opt }}</option>
+   {% endfor %}
+  </select>
+ {% elif kind == 'textarea' %}
+  <textarea name="{{ name }}" rows="4"></textarea>
+ {% else %}
+  <input name="{{ name }}" type="{{ kind }}">
+ {% endif %}
+{% endfor %}
+<button>Generate &amp; edit</button></form>
+{% endblock %}

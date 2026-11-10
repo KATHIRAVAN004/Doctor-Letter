@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block content %}
+<h2>My letters</h2>
+{% for l in letters %}
+<div class="card"><a href="{{ url_for('view_letter', letter_id=l.id) }}">{{ l.title }}</a><br>
+<small>{{ l.type_label }} &middot; {{ l.created_at[:16]|replace('T',' ') }} UTC</small></div>
+{% else %}<p>No letters yet.</p>{% endfor %}
+{% endblock %}

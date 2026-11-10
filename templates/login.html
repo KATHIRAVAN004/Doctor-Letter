@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Doctor Letters</h2>
+
+<!-- LOGIN -->
+<form method="post" action="{{ url_for('login') }}">
+  <label>Mobile number</label>
+  <input name="mobile" type="tel" inputmode="numeric" maxlength="10" required autofocus>
+  <button>Continue</button>
+</form>
+
+<hr>
+
+<h3>Add Doctor</h3>
+<form method="post" action="{{ url_for('register_doctor') }}">
+  <label>Doctor name</label>
+  <input name="name" type="text" required>
+
+  <label>Mobile number</label>
+  <input name="mobile" type="tel" inputmode="numeric" maxlength="10" required>
+
+  <label>Qualification</label>
+  <input name="qualification" type="text" placeholder="MBBS">
+
+  <label>Registration no.</label>
+  <input name="reg_no" type="text">
+
+  <label>Clinic / hospital</label>
+  <input name="clinic" type="text">
+
+  <label>Address</label>
+  <textarea name="address" rows="2"></textarea>
+
+  <button>Save Doctor</button>
+</form>
+
+<!-- ACTIVATE / DEACTIVATE -->
+<h3>Activate / Deactivate Doctor</h3>
+<form method="post" action="{{ url_for('doctor_status') }}">
+  <label>Doctor mobile number</label>
+  <input name="mobile" type="tel" inputmode="numeric" maxlength="10" required>
+  <button type="submit" name="action" value="activate">Activate</button>
+  <button type="submit" name="action" value="deactivate">Deactivate</button>
+</form>
+{% endblock %}
